@@ -102,6 +102,7 @@ export default function CheckoutPage() {
   const [isLoadingCoupons, setIsLoadingCoupons] = useState(false)
   const [paymentAction, setPaymentAction] = useState<'card' | 'invoice'>('card')
   const paymentActionRef = useRef<'card' | 'invoice'>('card') // Ref for sync access in handlePlaceOrder
+  const initialLoadCompleteRef = useRef(false) // Prevents premature redirect before verifyAuth finishes
   const [showSuccessModal, setShowSuccessModal] = useState(false)
   const [confirmedOrderIds, setConfirmedOrderIds] = useState<string[]>([])
   const [isOrderPlaced, setIsOrderPlaced] = useState(false)
@@ -424,6 +425,10 @@ export default function CheckoutPage() {
         return
       }
 
+      // Mark initial load as complete - now the reactive useEffect can safely redirect
+      // if the user empties their cart while on this page
+      initialLoadCompleteRef.current = true
+
       fetchRelatedProducts()
       if (useAuthStore.getState().isAuthenticated) {
         fetchAvailableCoupons()
@@ -570,8 +575,10 @@ export default function CheckoutPage() {
   }, [isAuthenticated, isHydrated, customer])
 
   useEffect(() => {
-    // Only redirect if cart store has finished hydrating from localStorage
-    if (items.length === 0 && isHydrated && !isOrderPlaced && useCartStore.persist.hasHydrated()) {
+    // Only redirect if verifyAuth has already confirmed the cart had items initially.
+    // This prevents premature redirects during hydration/auth state transitions
+    // but still handles the case where user removes all items on this page.
+    if (items.length === 0 && isHydrated && !isOrderPlaced && initialLoadCompleteRef.current) {
       router.push("/cart")
     }
   }, [items.length, router, isHydrated, isOrderPlaced])
