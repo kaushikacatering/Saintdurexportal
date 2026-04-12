@@ -1,0 +1,18 @@
+DirectoryIndex index.php
+Options -Indexes
+
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Serve _next/static files directly from .next/static on disk
+RewriteRule ^_next/static/(.*)$ .next/static/$1 [L]
+
+# If file exists on disk, serve it directly
+RewriteCond %{REQUEST_FILENAME} -f
+RewriteRule ^ - [L]
+
+# Everything else goes through PHP proxy to Node.js
+RewriteRule ^(.*)$ index.php [L]
