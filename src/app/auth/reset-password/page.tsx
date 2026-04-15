@@ -24,8 +24,16 @@ function ResetPasswordPageContent() {
   const [verifying, setVerifying] = useState(true)
   const [tokenValid, setTokenValid] = useState(false)
   const [email, setEmail] = useState("")
+  const [mountError, setMountError] = useState(false)
 
   useEffect(() => {
+    // TODO: Temporary - remove this flag once reset password is fixed
+    setMountError(true)
+    setVerifying(false)
+  }, [])
+
+  useEffect(() => {
+    if (mountError) return
     const verifyToken = async () => {
       if (!token) {
         setVerifying(false)
@@ -51,7 +59,7 @@ function ResetPasswordPageContent() {
     }
 
     verifyToken()
-  }, [token, verifyResetToken])
+  }, [token, verifyResetToken, mountError])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -82,6 +90,26 @@ function ResetPasswordPageContent() {
     } finally {
       setLoading(false)
     }
+  }
+
+  if (mountError) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-white">
+        <div className="w-full max-w-md px-8">
+          <div className="bg-red-50 border border-red-200 rounded-lg p-6 text-center">
+            <h2 className="text-2xl font-bold text-red-900 mb-2">Component Mount Failed</h2>
+            <p className="text-red-700 mb-4">
+              Something went wrong while loading this page. Please try again later.
+            </p>
+            <Link href="/auth/login">
+              <Button className="bg-[#2952E6] hover:bg-[#1e3fb3] text-white">
+                Back to Login
+              </Button>
+            </Link>
+          </div>
+        </div>
+      </div>
+    )
   }
 
   if (verifying) {
