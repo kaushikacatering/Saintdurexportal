@@ -20,7 +20,16 @@ export function middleware(request: NextRequest) {
     // For now, we'll rely on client-side checks
   }
   
-  return NextResponse.next()
+  const response = NextResponse.next()
+
+  // Prevent server-level caching for HTML pages (fixes LiteSpeed/cPanel cache issues)
+  if (!currentPath.startsWith('/_next/static')) {
+    response.headers.set('Cache-Control', 'no-cache, no-store, must-revalidate')
+    response.headers.set('Pragma', 'no-cache')
+    response.headers.set('Expires', '0')
+  }
+
+  return response
 }
 
 export const config = {

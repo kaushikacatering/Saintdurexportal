@@ -14,5 +14,17 @@ RewriteRule ^_next/static/(.*)$ .next/static/$1 [L]
 RewriteCond %{REQUEST_FILENAME} -f
 RewriteRule ^ - [L]
 
+# Disable caching for dynamic pages (prevent LiteSpeed/server cache from serving stale HTML)
+<IfModule mod_headers.c>
+  Header set Cache-Control "no-cache, no-store, must-revalidate" "expr=%{REQUEST_URI} !~ m#^/_next/static/#"
+  Header set Pragma "no-cache" "expr=%{REQUEST_URI} !~ m#^/_next/static/#"
+  Header set Expires "0" "expr=%{REQUEST_URI} !~ m#^/_next/static/#"
+</IfModule>
+
+# Disable LiteSpeed cache for dynamic routes
+<IfModule LiteSpeed>
+  CacheLookup off
+</IfModule>
+
 # Everything else goes through PHP proxy to Node.js
 RewriteRule ^(.*)$ index.php [L]
