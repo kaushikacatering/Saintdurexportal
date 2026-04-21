@@ -1,0 +1,27 @@
+DirectoryIndex disabled
+Options -Indexes +FollowSymLinks
+
+RewriteEngine On
+
+# Let AutoSSL / Let's Encrypt validate without proxying
+RewriteRule ^\.well-known/ - [L]
+
+# Force HTTPS
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Serve /uploads/ from disk (don't proxy to Node)
+RewriteRule ^uploads/ - [L]
+
+# WebSocket upgrade -> Node
+RewriteCond %{HTTP:Upgrade} =websocket [NC]
+RewriteRule ^(.*)$ ws://localhost:3120/$1 [P,L,NE]
+
+# Everything else -> Node
+RewriteRule ^(.*)$ http://localhost:3120/$1 [P,L,NE]
+
+# php -- BEGIN cPanel-generated handler, do not edit
+<IfModule mime_module>
+  AddHandler application/x-httpd-ea-php74 .php .php7 .phtml
+</IfModule>
+# php -- END cPanel-generated handler

@@ -62,19 +62,4 @@ foreach (explode("\r\n", $responseHeaders) as $line) {
 }
 
 http_response_code($httpCode);
-
-// Prevent server-level caching for HTML pages
-$contentType = '';
-foreach (explode("\r\n", $responseHeaders) as $line) {
-    if (stripos($line, 'content-type:') === 0) {
-        $contentType = strtolower(trim($line));
-        break;
-    }
-}
-if (strpos($contentType, 'text/html') !== false || empty($contentType)) {
-    header('Cache-Control: no-cache, no-store, must-revalidate');
-    header('Pragma: no-cache');
-    header('Expires: 0');
-}
-
 echo $responseBody;

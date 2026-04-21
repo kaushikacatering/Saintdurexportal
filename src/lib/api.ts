@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL || "http://localhost:9000"
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.stdreux.com.au/"
 
 // Log API URL and warn if using localhost in production
 if (typeof window !== "undefined") {
