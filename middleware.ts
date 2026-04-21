@@ -2,23 +2,12 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 
 export function middleware(request: NextRequest) {
-  const currentPath = request.nextUrl.pathname
-  const searchParams = request.nextUrl.searchParams
-
-  // Cache-bust workaround: If /shop is requested without any query params,
-  // add a _cb param to bypass stale Engintron/Nginx cached HTML.
-  // This forces Nginx to treat it as a new cache key and hit Node.js fresh.
-  if (currentPath === '/shop' && !searchParams.toString()) {
-    const url = request.nextUrl.clone()
-    url.searchParams.set('_cb', '1')
-    return NextResponse.redirect(url, 302)
-  }
-
   // Get the token from cookies
   const token = request.cookies.get('caterly-auth')?.value
   
   // Only protect specific routes
   const protectedRoutes = ['/wholesale', '/shop', '/cart', '/checkout']
+  const currentPath = request.nextUrl.pathname
   
   // Check if current path is protected
   const isProtectedRoute = protectedRoutes.some(route => 
