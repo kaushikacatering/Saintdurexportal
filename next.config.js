@@ -31,6 +31,28 @@ const nextConfig = {
       },
     ],
   },
+
+  // Prevent Engintron/Nginx from caching dynamic pages
+  async headers() {
+    return [
+      {
+        source: '/shop/:path*',
+        headers: [
+          { key: 'Cache-Control', value: 'no-cache, no-store, must-revalidate' },
+          { key: 'Pragma', value: 'no-cache' },
+          { key: 'Expires', value: '0' },
+        ],
+      },
+      {
+        source: '/shop',
+        headers: [
+          { key: 'Cache-Control', value: 'no-cache, no-store, must-revalidate' },
+          { key: 'Pragma', value: 'no-cache' },
+          { key: 'Expires', value: '0' },
+        ],
+      },
+    ];
+  },
 }
 
 module.exports = nextConfig
