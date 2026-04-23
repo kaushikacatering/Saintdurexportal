@@ -295,7 +295,7 @@ function PaymentPageContent() {
         }
       }
     }
-  }, [rawOrderId, rawOrderIds, mode, urlClientSecret, urlAmount]);
+  }, [rawOrderId, rawOrderIds, mode, urlAmount]);
 
   useEffect(() => {
     if (!isAuthenticated && mode !== 'intent') {
