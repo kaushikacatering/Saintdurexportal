@@ -12,8 +12,25 @@ import { toast } from "sonner"
 export default function PendingApprovalPage() {
   const router = useRouter()
   const { user, customer, isAuthenticated, isWholesaleApproved, logout } = useAuthStore()
+  const [hydrated, setHydrated] = React.useState(false)
+
+  // Wait for Zustand to rehydrate from localStorage before making redirect decisions
+  React.useEffect(() => {
+    const unsub = useAuthStore.persist.onFinishHydration(() => {
+      setHydrated(true)
+      unsub()
+    })
+    // If already hydrated (e.g. navigated from another page)
+    if (useAuthStore.persist.hasHydrated()) {
+      setHydrated(true)
+      unsub()
+    }
+    return () => unsub()
+  }, [])
 
   useEffect(() => {
+    if (!hydrated) return // Don't redirect until store is hydrated
+
     // Redirect if not authenticated
     if (!isAuthenticated) {
       router.push('/auth/login')
@@ -37,7 +54,7 @@ export default function PendingApprovalPage() {
     }
 
     // User is wholesale but not approved - show pending page
-  }, [isAuthenticated, customer, isWholesaleApproved, router])
+  }, [hydrated, isAuthenticated, customer, isWholesaleApproved, router])
 
   const handleLogout = () => {
     logout()

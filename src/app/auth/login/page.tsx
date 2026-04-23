@@ -213,7 +213,15 @@ function LoginPageContent() {
 
   useEffect(() => {
     const checkAuthAndRedirect = async () => {
-      await new Promise((resolve) => setTimeout(resolve, 100));
+      // Wait for Zustand store to rehydrate from localStorage
+      if (!useAuthStore.persist.hasHydrated()) {
+        await new Promise<void>((resolve) => {
+          const unsub = useAuthStore.persist.onFinishHydration(() => {
+            unsub();
+            resolve();
+          });
+        });
+      }
 
       const authState = useAuthStore.getState();
       if (authState.isAuthenticated && authState.token) {
@@ -247,11 +255,12 @@ function LoginPageContent() {
         return;
       }
 
-      logout();
+      // Only logout if store is hydrated and there's genuinely no auth
+      // Don't call logout() blindly — it would clear a valid token that hasn't loaded yet
     };
 
     checkAuthAndRedirect();
-  }, [router, redirect, logout]);
+  }, [router, redirect]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
