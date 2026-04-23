@@ -229,7 +229,6 @@ function PaymentPageContent() {
   const rawOrderId = searchParams.get("order_id");
   const rawOrderIds = searchParams.get("order_ids");
   const mode = searchParams.get("mode");
-  const urlClientSecret = searchParams.get("client_secret");
   const urlAmount = searchParams.get("amount");
 
   // Normalize to valid IDs array
@@ -253,8 +252,9 @@ function PaymentPageContent() {
     if (mode === 'intent') {
       // Mode intent: No initial order IDs needed
       setLoadingOrder(false);
-      if (urlClientSecret) {
-        setClientSecret(urlClientSecret);
+      const storedClientSecret = sessionStorage.getItem('client_secret');
+      if (storedClientSecret) {
+        setClientSecret(storedClientSecret);
       }
       if (urlAmount) {
         setOrder({

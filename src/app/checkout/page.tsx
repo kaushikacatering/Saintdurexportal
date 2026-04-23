@@ -126,7 +126,7 @@ export default function CheckoutPage() {
     }
   }
 
-  const [billingData, setBillingData] = useState({
+  const defaultFormData = {
     firstName: "",
     lastName: "",
     phone: "",
@@ -137,20 +137,28 @@ export default function CheckoutPage() {
     state: "",
     postcode: "",
     email: "",
-  })
+  }
 
-  const [shippingData, setShippingData] = useState({
-    firstName: "",
-    lastName: "",
-    phone: "",
-    country: "Australia",
-    streetAddress: "",
-    apartment: "",
-    suburb: "",
-    state: "",
-    postcode: "",
-    email: "",
-  })
+  const getSessionFormData = (key: string) => {
+    try {
+      const saved = typeof window !== 'undefined' ? sessionStorage.getItem(key) : null
+      if (saved) return JSON.parse(saved)
+    } catch {}
+    return null
+  }
+
+  const [billingData, setBillingData] = useState(() => getSessionFormData('checkout_billing') || { ...defaultFormData })
+
+  const [shippingData, setShippingData] = useState(() => getSessionFormData('checkout_shipping') || { ...defaultFormData })
+
+  // Persist form data to sessionStorage on every change
+  useEffect(() => {
+    sessionStorage.setItem('checkout_billing', JSON.stringify(billingData))
+  }, [billingData])
+
+  useEffect(() => {
+    sessionStorage.setItem('checkout_shipping', JSON.stringify(shippingData))
+  }, [shippingData])
 
 
 
@@ -316,26 +324,32 @@ export default function CheckoutPage() {
       if (fetchedDetails) {
         setCustomerDetails(fetchedDetails)
 
-        const newBillingData = {
-          firstName: fetchedDetails.firstname || "",
-          lastName: fetchedDetails.lastname || "",
-          phone: fetchedDetails.telephone || "",
-          country: "Australia",
-          streetAddress: fetchedDetails.address_line1 || "",
-          apartment: fetchedDetails.address_line2 || "",
-          suburb: fetchedDetails.suburb || "",
-          state: fetchedDetails.state || "",
-          postcode: fetchedDetails.postal_code || "",
-          email: fetchedDetails.email || currentUser.email || "",
+        // Only overwrite form data from API if user hasn't already filled the form
+        const savedBilling = getSessionFormData('checkout_billing')
+        const hasUserFilledForm = savedBilling && Object.values(savedBilling).some((v: any) => v && v !== 'Australia')
+
+        if (!hasUserFilledForm) {
+          const newBillingData = {
+            firstName: fetchedDetails.firstname || "",
+            lastName: fetchedDetails.lastname || "",
+            phone: fetchedDetails.telephone || "",
+            country: "Australia",
+            streetAddress: fetchedDetails.address_line1 || "",
+            apartment: fetchedDetails.address_line2 || "",
+            suburb: fetchedDetails.suburb || "",
+            state: fetchedDetails.state || "",
+            postcode: fetchedDetails.postal_code || "",
+            email: fetchedDetails.email || currentUser.email || "",
+          }
+
+          setBillingData(newBillingData)
+
+          setShippingData({
+            ...newBillingData,
+            firstName: newBillingData.firstName,
+            lastName: newBillingData.lastName,
+          })
         }
-
-        setBillingData(newBillingData)
-
-        setShippingData({
-          ...newBillingData,
-          firstName: newBillingData.firstName,
-          lastName: newBillingData.lastName,
-        })
       } else {
         const nameParts = (currentUser.username || "").trim().split(/\s+/);
         const firstName = nameParts[0] || "";
@@ -1073,6 +1087,8 @@ export default function CheckoutPage() {
         if (createdOrderIds.length > 0) {
           setIsOrderPlaced(true)
           clearCart()
+          sessionStorage.removeItem('checkout_billing')
+          sessionStorage.removeItem('checkout_shipping')
           setConfirmedOrderIds(createdOrderIds)
           setShowSuccessModal(true)
         }
@@ -1107,8 +1123,8 @@ export default function CheckoutPage() {
         // unless we upload it to a temp endpoint. 
         // Given constraints, we will proceed without complex image handling refactor.
 
-        // 3. Redirect to Payment Page
-        router.push(`/payment?mode=intent&client_secret=${client_secret}&amount=${totalAmountToPay}`);
+        // 3. Redirect to Payment Page (client_secret passed via sessionStorage, not URL)
+        router.push(`/payment?mode=intent&amount=${totalAmountToPay}`);
       }
 
     } catch (error: any) {
