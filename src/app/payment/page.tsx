@@ -78,6 +78,13 @@ function PaymentForm({
         clientSecret,
         confirmParams: {
           return_url: `${window.location.origin}/payment/success?payment_intent_id={PAYMENT_INTENT_ID}&order_id=${orderId}&mode=${mode || ''}`,
+          payment_method_data: {
+            billing_details: {
+              address: {
+                country: 'AU',
+              },
+            },
+          },
         },
         redirect: "if_required",
       });
