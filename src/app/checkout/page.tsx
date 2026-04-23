@@ -80,11 +80,17 @@ export default function CheckoutPage() {
   const { isAuthenticated, user, customer, checkAuth } = useAuthStore()
   const [loading, setLoading] = useState(false)
   const [relatedProducts, setRelatedProducts] = useState<Product[]>([])
-  const [shippingMethod, setShippingMethod] = useState("standard")
-  const [shipToDifferentAddress, setShipToDifferentAddress] = useState(false)
+  const [shippingMethod, setShippingMethod] = useState(() => {
+    try { const v = typeof window !== 'undefined' ? sessionStorage.getItem('checkout_shippingMethod') : null; return v || "standard"; } catch { return "standard"; }
+  })
+  const [shipToDifferentAddress, setShipToDifferentAddress] = useState(() => {
+    try { const v = typeof window !== 'undefined' ? sessionStorage.getItem('checkout_shipDiff') : null; return v === 'true'; } catch { return false; }
+  })
   const [subscriptionFrequency, setSubscriptionFrequency] = useState("One Time")
   const [deliveryStartDate, setDeliveryStartDate] = useState("")
-  const [deliveryNotes, setDeliveryNotes] = useState("")
+  const [deliveryNotes, setDeliveryNotes] = useState(() => {
+    try { const v = typeof window !== 'undefined' ? sessionStorage.getItem('checkout_deliveryNotes') : null; return v || ""; } catch { return ""; }
+  })
   // const [deliveryDateTime, setDeliveryDateTime] = useState("")
   const [deliveryNotesImage, setDeliveryNotesImage] = useState<File | null>(null)
   const [deliveryNotesImagePreview, setDeliveryNotesImagePreview] = useState<string | null>(null)
@@ -159,6 +165,18 @@ export default function CheckoutPage() {
   useEffect(() => {
     sessionStorage.setItem('checkout_shipping', JSON.stringify(shippingData))
   }, [shippingData])
+
+  useEffect(() => {
+    sessionStorage.setItem('checkout_shippingMethod', shippingMethod)
+  }, [shippingMethod])
+
+  useEffect(() => {
+    sessionStorage.setItem('checkout_shipDiff', String(shipToDifferentAddress))
+  }, [shipToDifferentAddress])
+
+  useEffect(() => {
+    sessionStorage.setItem('checkout_deliveryNotes', deliveryNotes)
+  }, [deliveryNotes])
 
 
 
@@ -1089,6 +1107,9 @@ export default function CheckoutPage() {
           clearCart()
           sessionStorage.removeItem('checkout_billing')
           sessionStorage.removeItem('checkout_shipping')
+          sessionStorage.removeItem('checkout_shippingMethod')
+          sessionStorage.removeItem('checkout_shipDiff')
+          sessionStorage.removeItem('checkout_deliveryNotes')
           setConfirmedOrderIds(createdOrderIds)
           setShowSuccessModal(true)
         }
