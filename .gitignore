@@ -142,3 +142,6 @@ api/
 testapp/
 portal.zip
 error_log
+
+# cPanel server config
+.htaccess
