@@ -63,13 +63,23 @@ export default function InvoicePage() {
                         })
                         ord = response.data.order
                     } catch (e) {
-                        console.warn("Invoice auth token failed, retrying with session auth...", e)
+                        console.warn("Invoice auth token failed, retrying with other methods...", e)
                     }
                 }
 
                 // If no order yet, try with standard session auth
+                if (!ord && isAuthenticated) {
+                    try {
+                        const response = await api.get(`/store/orders/${orderId}`)
+                        ord = response.data.order
+                    } catch (e) {
+                        console.warn("Session auth failed, trying public endpoint...", e)
+                    }
+                }
+
+                // If still no order, use public endpoint (for email links)
                 if (!ord) {
-                    const response = await api.get(`/store/orders/${orderId}`)
+                    const response = await api.get(`/store/orders/${orderId}/public-view`)
                     ord = response.data.order
                 }
 

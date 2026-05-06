@@ -298,20 +298,6 @@ function PaymentPageContent() {
   }, [rawOrderId, rawOrderIds, mode, urlAmount]);
 
   useEffect(() => {
-    if (!isAuthenticated && mode !== 'intent') {
-      const ids = rawOrderIds
-        ? rawOrderIds.split(',')
-        : (rawOrderId ? [rawOrderId] : []);
-
-      let redirectParams = "";
-      redirectParams = ids.length > 1
-        ? `?order_ids=${ids.join(',')}`
-        : (ids.length === 1 ? `?order_id=${ids[0]}` : "");
-
-      router.push("/auth/login?redirect=/payment" + redirectParams);
-      return;
-    }
-
     if (mode === 'intent') return;
 
     if (!isAggregated && currentOrderId && !allFinished) {
@@ -342,7 +328,8 @@ function PaymentPageContent() {
   const fetchOrder = async (id: string) => {
     try {
       setLoadingOrder(true);
-      const response = await api.get(`/store/orders/${id}`);
+      const endpoint = isAuthenticated ? `/store/orders/${id}` : `/store/orders/${id}/public-view`;
+      const response = await api.get(endpoint);
       const ord = response.data.order;
 
       if (ord) {
@@ -365,7 +352,8 @@ function PaymentPageContent() {
   const fetchOrdersCombined = async (ids: string[]) => {
     try {
       setLoadingOrder(true);
-      const promises = ids.map(id => api.get(`/store/orders/${id}`));
+      const endpoint = (id: string) => isAuthenticated ? `/store/orders/${id}` : `/store/orders/${id}/public-view`;
+      const promises = ids.map(id => api.get(endpoint(id)));
       const responses = await Promise.all(promises);
       const orders = responses.map(r => r.data.order);
 
@@ -494,10 +482,6 @@ function PaymentPageContent() {
       clearCart();
     }
   };
-
-  if (!isAuthenticated && mode !== 'intent') {
-    return null;
-  }
 
   if (allFinished || (isAggregated && paymentSuccess) || (mode === 'intent' && paymentSuccess)) {
     return (

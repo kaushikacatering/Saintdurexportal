@@ -95,12 +95,14 @@ api.interceptors.response.use(
           currentPath === '/checkout' ||
           currentPath === '/cart' ||
           currentPath === '/payment' ||
+          currentPath.includes('/invoice') ||
           currentPath === '/terms'
 
         // Don't redirect for public APIs (products, shop, etc.)
         const isPublicAPI = error.config?.url?.includes('/store/products') ||
           error.config?.url?.includes('/store/products/categories') ||
-          error.config?.url?.includes('/store/blogs')
+          error.config?.url?.includes('/store/blogs') ||
+          error.config?.url?.includes('/public-view')
 
         if (!isPublicPath && !isPublicAPI && !currentPath.includes('/auth/login') && !currentPath.includes('/login')) {
           // Store intended destination
