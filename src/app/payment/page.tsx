@@ -333,9 +333,16 @@ function PaymentPageContent() {
       const ord = response.data.order;
 
       if (ord) {
-        const newTotal = calculateOrderTotal(ord);
-        ord.total = newTotal;
-        ord.order_total = newTotal;
+        // Use order_total from the database as the source of truth
+        // Don't recalculate client-side as product option pricing may not be reflected in subtotal
+        const dbTotal = Number.parseFloat(ord.order_total || '0');
+        if (dbTotal > 0) {
+          ord.total = dbTotal.toFixed(2);
+        } else {
+          const newTotal = calculateOrderTotal(ord);
+          ord.total = newTotal;
+          ord.order_total = newTotal;
+        }
       }
 
       setOrder(ord);
