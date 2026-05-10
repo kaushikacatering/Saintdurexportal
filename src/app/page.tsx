@@ -548,7 +548,7 @@ export default function HomePage() {
               Served with purpose.
             </h1>
             <p className="text-lg sm:text-xl mb-8 text-white/90">
-              Crafted with passion, enjoyed in every bite. Taste the difference.
+              Crafted with passion, enjoyed in every sip. Taste the difference.
             </p>
             <Link href="/shop">
               <Button

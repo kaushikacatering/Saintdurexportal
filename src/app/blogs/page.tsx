@@ -122,7 +122,7 @@ export default function BlogsPage() {
           <div className="mb-12">
             <h2 className="text-4xl font-bold text-gray-900 mb-2">Blogs</h2>
             <p className="text-gray-600">
-              Crafted with passion, enjoyed in every bite. Taste the difference!
+              Crafted with passion, enjoyed in every sip. Taste the difference!
             </p>
           </div>
 
@@ -217,7 +217,7 @@ export default function BlogsPage() {
           <div className="mb-12">
             <h3 className="text-3xl font-bold text-gray-900 mb-2">Other Blogs</h3>
             <p className="text-gray-600 mb-8">
-              Crafted with passion, enjoyed in every bite. Taste the difference!
+              Crafted with passion, enjoyed in every sip. Taste the difference!
             </p>
 
             {loading ? (
