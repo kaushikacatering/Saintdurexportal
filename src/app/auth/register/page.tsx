@@ -886,7 +886,7 @@ function RegisterPageContent() {
 
             <Button
               type="submit"
-              className="w-full py-6 bg-[#031881] hover:bg-[#021466] text-white font-semibold rounded-lg transition-colors"
+              className="w-full py-6 bg-[#031881] hover:bg-[#1a3a9e] text-white font-semibold rounded-lg transition-colors"
               disabled={loading}
             >
               {loading ? "Creating account..." : "Sign Up"}

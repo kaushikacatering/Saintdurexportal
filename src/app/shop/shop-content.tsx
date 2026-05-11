@@ -990,7 +990,7 @@ export function ShopPageContent() {
                         Reset
                       </Button>
                       <Button
-                        className="flex-1 bg-[#031881] hover:bg-[#021466]"
+                        className="flex-1 bg-[#031881] hover:bg-[#1a3a9e]"
                         onClick={handleApplyFilters}
                       >
                         Apply Filters

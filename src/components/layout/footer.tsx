@@ -156,7 +156,7 @@ export function Footer() {
               <Button
                 type="submit"
                 disabled={loading}
-                className="bg-[#031881] hover:bg-[#021466] px-8 h-12 text-base disabled:opacity-50 whitespace-nowrap rounded-md"
+                className="bg-[#031881] hover:bg-[#1a3a9e] px-8 h-12 text-base disabled:opacity-50 whitespace-nowrap rounded-md"
                 style={{ fontFamily: 'Albert Sans', fontWeight: 600 }}
               >
                 {loading ? "Subscribing..." : "Submit"}

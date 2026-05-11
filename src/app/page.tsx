@@ -418,7 +418,7 @@ export default function HomePage() {
             <Button
               asChild
               size="sm"
-              className="w-full bg-[#031881] hover:bg-[#021466] mt-auto"
+              className="w-full bg-[#031881] hover:bg-[#1a3a9e] mt-auto"
             >
               <span>View Product</span>
             </Button>
@@ -553,7 +553,7 @@ export default function HomePage() {
             <Link href="/shop">
               <Button
                 size="lg"
-                className="bg-[#031881] hover:bg-[#021466] text-white px-8 py-6 text-lg"
+                className="bg-[#031881] hover:bg-[#1a3a9e] text-white px-8 py-6 text-lg"
               >
                 Order Now
               </Button>
@@ -818,7 +818,7 @@ export default function HomePage() {
               <Link href="/wholesale-info">
                 <Button
                   size="lg"
-                  className="bg-[#031881] hover:bg-[#021466] text-white px-8 py-6 text-lg rounded-lg"
+                  className="bg-[#031881] hover:bg-[#1a3a9e] text-white px-8 py-6 text-lg rounded-lg"
                 >
                   Partner with Us!
                 </Button>
@@ -898,7 +898,7 @@ export default function HomePage() {
 
             <Dialog open={isReviewDialogOpen} onOpenChange={setIsReviewDialogOpen}>
               <DialogTrigger asChild>
-                <Button className="bg-[#031881] hover:bg-[#021466] text-white">
+                <Button className="bg-[#031881] hover:bg-[#1a3a9e] text-white">
                   <Plus className="w-4 h-4 mr-2" />
                   Write a Review
                 </Button>
@@ -967,7 +967,7 @@ export default function HomePage() {
                     />
                   </div>
                   <DialogFooter>
-                    <Button type="submit" disabled={isSubmittingReview} className="bg-[#031881] hover:bg-[#021466]">
+                    <Button type="submit" disabled={isSubmittingReview} className="bg-[#031881] hover:bg-[#1a3a9e]">
                       {isSubmittingReview ? "Submitting..." : "Submit Review"}
                     </Button>
                   </DialogFooter>

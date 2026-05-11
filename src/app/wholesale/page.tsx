@@ -139,7 +139,7 @@
 //             Join cafés, retailers & wholesalers serving premium coffee.
 //           </h1>
 //           <Link href="/auth/register?type=wholesale">
-//             <Button size="lg" className="bg-[#031881] hover:bg-[#021466] text-white px-12 py-6 text-lg mt-6">
+//             <Button size="lg" className="bg-[#031881] hover:bg-[#1a3a9e] text-white px-12 py-6 text-lg mt-6">
 //               Register Now
 //             </Button>
 //           </Link>
@@ -160,7 +160,7 @@
 //               </p>
 //             </div>
 //             <Link href="/auth/register?type=wholesale">
-//               <Button className="bg-[#031881] hover:bg-[#021466] text-white px-8">
+//               <Button className="bg-[#031881] hover:bg-[#1a3a9e] text-white px-8">
 //                 Register
 //               </Button>
 //             </Link>
@@ -197,7 +197,7 @@
 //             Join our family of cafés, restaurants, and creators who care about quality and connection. From freshly roasted beans to barista training and co-branded experiences, we've got your back — one cup at a time.
 //           </p>
 //           <Link href="/auth/register?type=wholesale">
-//             <Button size="lg" className="bg-[#031881] hover:bg-[#021466] text-white px-10">
+//             <Button size="lg" className="bg-[#031881] hover:bg-[#1a3a9e] text-white px-10">
 //               Register Now!
 //             </Button>
 //           </Link>
@@ -397,7 +397,7 @@
 
 //             <Button 
 //               type="submit" 
-//               className="w-full py-6 bg-[#031881] hover:bg-[#021466] text-white font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+//               className="w-full py-6 bg-[#031881] hover:bg-[#1a3a9e] text-white font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
 //               disabled={loading || submitted}
 //             >
 //               {loading ? "Submitting..." : (submitted ? "Submitted!" : "Submit")}

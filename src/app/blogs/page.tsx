@@ -146,7 +146,7 @@ export default function BlogsPage() {
                   variant={selectedFilters.includes(category) ? "default" : "outline"}
                   className={`px-4 py-2 cursor-pointer text-sm ${
                     selectedFilters.includes(category)
-                      ? "bg-[#031881] hover:bg-[#021466] text-white"
+                      ? "bg-[#031881] hover:bg-[#1a3a9e] text-white"
                       : "bg-[#E3F2FD] border-[#031881] text-[#031881] hover:bg-[#BBDEFB]"
                   }`}
                   onClick={() => toggleFilter(category)}

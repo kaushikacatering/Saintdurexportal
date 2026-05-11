@@ -105,7 +105,7 @@ function ResetPasswordPageContent() {
               This password reset link is invalid or has expired. Please request a new one.
             </p>
             <Link href="/auth/forgot-password">
-              <Button className="bg-[#031881] hover:bg-[#021466] text-white">
+              <Button className="bg-[#031881] hover:bg-[#1a3a9e] text-white">
                 Request New Reset Link
               </Button>
             </Link>
@@ -173,7 +173,7 @@ function ResetPasswordPageContent() {
 
             <Button 
               type="submit" 
-              className="w-full py-6 bg-[#031881] hover:bg-[#021466] text-white font-semibold rounded-lg transition-colors"
+              className="w-full py-6 bg-[#031881] hover:bg-[#1a3a9e] text-white font-semibold rounded-lg transition-colors"
               disabled={loading}
             >
               {loading ? "Resetting..." : "Reset Password"}

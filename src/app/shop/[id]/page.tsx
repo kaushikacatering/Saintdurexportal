@@ -1396,7 +1396,7 @@ export default function ProductDetailPage({
               ) : (
                 <Button
                   size="lg"
-                  className="w-full py-6 bg-[#031881] hover:bg-[#021466] text-white font-semibold text-lg"
+                  className="w-full py-6 bg-[#031881] hover:bg-[#1a3a9e] text-white font-semibold text-lg"
                   onClick={handleAddToCart}
                 >
                   Add to Cart
@@ -1607,7 +1607,7 @@ export default function ProductDetailPage({
 
                 <Button
                   onClick={handleSubmitReview}
-                  className="bg-[#031881] hover:bg-[#021466]"
+                  className="bg-[#031881] hover:bg-[#1a3a9e]"
                   disabled={
                     submittingReview || !rating || reviewText.trim().length < 10
                   }
@@ -1625,7 +1625,7 @@ export default function ProductDetailPage({
                 You may also Like
               </h2>
               <Link href="/shop" className="w-full md:w-auto">
-                <Button className="bg-[#031881] hover:bg-[#021466] w-full md:w-auto">
+                <Button className="bg-[#031881] hover:bg-[#1a3a9e] w-full md:w-auto">
                   View All
                 </Button>
               </Link>

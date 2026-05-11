@@ -159,7 +159,7 @@ export default function InvoicePage() {
                     </Link>
                     <Button
                         onClick={handlePrint}
-                        className="bg-[#031881] text-white hover:bg-[#021466] px-6 rounded-lg shadow-sm"
+                        className="bg-[#031881] text-white hover:bg-[#1a3a9e] px-6 rounded-lg shadow-sm"
                     >
                         <Printer className="h-4 w-4 mr-2" />
                         Print Invoice
