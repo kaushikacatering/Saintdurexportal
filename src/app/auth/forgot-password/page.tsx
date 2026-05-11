@@ -73,7 +73,7 @@ export default function ForgotPasswordPage() {
               </div>
               <Button
                 onClick={() => router.push("/auth/login")}
-                className="w-full py-6 bg-[#2952E6] hover:bg-[#1e3fb3] text-white font-semibold rounded-lg transition-colors"
+                className="w-full py-6 bg-[#031881] hover:bg-[#021466] text-white font-semibold rounded-lg transition-colors"
               >
                 Back to Login
               </Button>
@@ -93,7 +93,7 @@ export default function ForgotPasswordPage() {
 
               <Button 
                 type="submit" 
-                className="w-full py-6 bg-[#2952E6] hover:bg-[#1e3fb3] text-white font-semibold rounded-lg transition-colors"
+                className="w-full py-6 bg-[#031881] hover:bg-[#021466] text-white font-semibold rounded-lg transition-colors"
                 disabled={loading}
               >
                 {loading ? "Sending..." : "Send Reset Link"}
@@ -103,7 +103,7 @@ export default function ForgotPasswordPage() {
 
           <p className="text-center text-gray-600 mt-8">
             Remember your password?{" "}
-            <Link href="/auth/login" className="text-[#2952E6] font-semibold hover:underline">
+            <Link href="/auth/login" className="text-[#031881] font-semibold hover:underline">
               Login
             </Link>
           </p>

@@ -413,7 +413,7 @@ function LoginPageContent() {
               <div className="mt-2 text-right">
                 <Link
                   href="/auth/forgot-password"
-                  className="text-sm text-[#2952E6] hover:underline"
+                  className="text-sm text-[#031881] hover:underline"
                 >
                   Forgot password?
                 </Link>
@@ -422,7 +422,7 @@ function LoginPageContent() {
 
             <Button
               type="submit"
-              className="w-full py-6 bg-[#2952E6] hover:bg-[#1e3fb3] text-white font-semibold rounded-lg transition-colors"
+              className="w-full py-6 bg-[#031881] hover:bg-[#021466] text-white font-semibold rounded-lg transition-colors"
               disabled={isButtonDisabled}
             >
               {isButtonDisabled ? "Processing..." : "Log in"}
@@ -478,7 +478,7 @@ function LoginPageContent() {
             Not a member yet?{" "}
             <Link
               href="/auth/register"
-              className="text-[#2952E6] font-semibold hover:underline"
+              className="text-[#031881] font-semibold hover:underline"
             >
               Register now
             </Link>

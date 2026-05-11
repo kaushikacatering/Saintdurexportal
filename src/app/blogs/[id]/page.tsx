@@ -121,7 +121,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
       <div className="border-b">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center gap-2 text-sm text-gray-600">
-            <Link href="/blogs" className="hover:text-[#2952E6]">Blogs</Link>
+            <Link href="/blogs" className="hover:text-[#031881]">Blogs</Link>
             <span>/</span>
             <span className="text-gray-900">{blogPost.category}</span>
           </div>
@@ -152,7 +152,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
                   <Badge
                     key={index}
                     variant="outline"
-                    className="border-[#2952E6] text-[#2952E6] px-4 py-1"
+                    className="border-[#031881] text-[#031881] px-4 py-1"
                   >
                     {tag}
                   </Badge>
@@ -240,7 +240,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
                       {blog.excerpt || "Read more..."}
                     </p>
                     <Link href={`/blogs/${blog.slug}`}>
-                      <Button variant="link" className="text-[#2952E6] p-0">
+                      <Button variant="link" className="text-[#031881] p-0">
                         Read more →
                       </Button>
                     </Link>
@@ -257,7 +257,7 @@ export default function BlogDetailPage({ params }: { params: Promise<{ id: strin
             <Button variant="outline" size="icon" className="rounded-full">
               <ChevronLeft className="w-4 h-4" />
             </Button>
-            <Button variant="outline" size="icon" className="rounded-full bg-[#2952E6] text-white">
+            <Button variant="outline" size="icon" className="rounded-full bg-[#031881] text-white">
               1
             </Button>
             <Button variant="outline" size="icon" className="rounded-full">

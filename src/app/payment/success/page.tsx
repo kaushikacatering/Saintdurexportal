@@ -134,7 +134,7 @@ function PaymentSuccessContent() {
       <div className="container mx-auto px-4 py-16">
         <Card className="max-w-2xl mx-auto">
           <CardContent className="p-16 text-center">
-            <Loader2 className="h-12 w-12 mx-auto text-[#2952E6] animate-spin mb-4" />
+            <Loader2 className="h-12 w-12 mx-auto text-[#031881] animate-spin mb-4" />
             <h2 className="text-2xl font-bold mb-2">Verifying Payment...</h2>
             <p className="text-gray-600">Please wait while we confirm your payment</p>
           </CardContent>
@@ -194,7 +194,7 @@ function PaymentSuccessContent() {
             You will receive a confirmation email shortly.
           </p>
           <div className="flex gap-4 justify-center">
-            <Button onClick={() => router.push("/account")} className="bg-[#2952E6] hover:bg-[#1e3fb3]">
+            <Button onClick={() => router.push("/account")} className="bg-[#031881] hover:bg-[#021466]">
               View Orders
             </Button>
             <Button variant="outline" onClick={() => router.push("/shop")}>
@@ -211,7 +211,7 @@ export default function PaymentSuccessPage() {
   return (
     <Suspense fallback={
       <div className="container mx-auto px-4 py-16 text-center">
-        <Loader2 className="h-12 w-12 mx-auto text-[#2952E6] animate-spin" />
+        <Loader2 className="h-12 w-12 mx-auto text-[#031881] animate-spin" />
       </div>
     }>
       <PaymentSuccessContent />

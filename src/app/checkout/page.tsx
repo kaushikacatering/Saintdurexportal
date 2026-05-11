@@ -1736,7 +1736,7 @@ export default function CheckoutPage() {
                                   </div>
                                 )}
                                 {item.subscription ? (
-                                  <div className="text-xs text-[#2952E6] mb-2 font-medium bg-blue-50 p-1 px-2 rounded inline-block">
+                                  <div className="text-xs text-[#031881] mb-2 font-medium bg-blue-50 p-1 px-2 rounded inline-block">
                                     <p>Subscription: {item.subscription.frequency}</p>
                                     {item.subscription.startDate && (
                                       <p className="mt-1">
@@ -1745,7 +1745,7 @@ export default function CheckoutPage() {
                                     )}
                                   </div>
                                 ) : (
-                                  <div className="text-xs text-[#2952E6] mb-2 font-medium bg-blue-50 p-1 px-2 rounded inline-block">
+                                  <div className="text-xs text-[#031881] mb-2 font-medium bg-blue-50 p-1 px-2 rounded inline-block">
                                     One Time Purchase
                                   </div>
                                 )}
@@ -1986,7 +1986,7 @@ export default function CheckoutPage() {
 
                       <Button
                         type="submit"
-                        className="w-full bg-[#2952E6] hover:bg-[#1e3fb3] text-white py-6 font-medium shadow-sm shadow-blue-200"
+                        className="w-full bg-[#031881] hover:bg-[#021466] text-white py-6 font-medium shadow-sm shadow-blue-200"
                         disabled={loading || items.length === 0}
                         onClick={() => { paymentActionRef.current = 'card'; setPaymentAction('card'); }}
                       >

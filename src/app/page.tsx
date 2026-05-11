@@ -361,13 +361,13 @@ export default function HomePage() {
                           <span className="text-sm text-gray-500 line-through">
                             ${strikePrice.toFixed(2)}
                           </span>
-                          <span className="text-xl font-bold text-[#2952E6]">
+                          <span className="text-xl font-bold text-[#031881]">
                             ${displayPrice.toFixed(2)}
                           </span>
                         </>
                       ) : (
                         // No strike price available
-                        <span className="text-xl font-bold text-[#2952E6]">
+                        <span className="text-xl font-bold text-[#031881]">
                           ${displayPrice.toFixed(2)}
                         </span>
                       )}
@@ -391,7 +391,7 @@ export default function HomePage() {
                                 2
                               )}
                           </span>
-                          <span className="text-xl font-bold text-[#2952E6]">
+                          <span className="text-xl font-bold text-[#031881]">
                             ${product.discounted_price.toFixed(2)}
                           </span>
                           {product.discount_percentage &&
@@ -403,7 +403,7 @@ export default function HomePage() {
                         </div>
                       ) : (
                         // Regular price
-                        <span className="text-xl font-bold text-[#2952E6]">
+                        <span className="text-xl font-bold text-[#031881]">
                           ${displayPrice.toFixed(2)}
                         </span>
                       )}
@@ -418,7 +418,7 @@ export default function HomePage() {
             <Button
               asChild
               size="sm"
-              className="w-full bg-[#2952E6] hover:bg-[#1e3fb3] mt-auto"
+              className="w-full bg-[#031881] hover:bg-[#021466] mt-auto"
             >
               <span>View Product</span>
             </Button>
@@ -553,7 +553,7 @@ export default function HomePage() {
             <Link href="/shop">
               <Button
                 size="lg"
-                className="bg-[#2952E6] hover:bg-[#1e3fb3] text-white px-8 py-6 text-lg"
+                className="bg-[#031881] hover:bg-[#021466] text-white px-8 py-6 text-lg"
               >
                 Order Now
               </Button>
@@ -611,7 +611,7 @@ export default function HomePage() {
             <Link href="/shop">
               <Button
                 variant="outline"
-                className="border-[#2952E6] text-[#2952E6] hover:bg-[#2952E6] hover:text-white"
+                className="border-[#031881] text-[#031881] hover:bg-[#031881] hover:text-white"
               >
                 View more
               </Button>
@@ -630,7 +630,7 @@ export default function HomePage() {
               <Link href="/shop">
                 <Button
                   variant="outline"
-                  className="border-[#2952E6] text-[#2952E6] hover:bg-[#2952E6] hover:text-white"
+                  className="border-[#031881] text-[#031881] hover:bg-[#031881] hover:text-white"
                 >
                   Browse All Products
                 </Button>
@@ -663,7 +663,7 @@ export default function HomePage() {
                   key={pageNum}
                   variant="outline"
                   size="icon"
-                  className={`rounded-full ${coffeePage === pageNum ? "bg-[#2952E6] text-white" : ""
+                  className={`rounded-full ${coffeePage === pageNum ? "bg-[#031881] text-white" : ""
                     }`}
                   onClick={() => setCoffeePage(pageNum)}
                 >
@@ -702,7 +702,7 @@ export default function HomePage() {
             <Link href="/shop">
               <Button
                 variant="outline"
-                className="border-[#2952E6] text-[#2952E6] hover:bg-[#2952E6] hover:text-white"
+                className="border-[#031881] text-[#031881] hover:bg-[#031881] hover:text-white"
               >
                 View more
               </Button>
@@ -721,7 +721,7 @@ export default function HomePage() {
               <Link href="/shop">
                 <Button
                   variant="outline"
-                  className="border-[#2952E6] text-[#2952E6] hover:bg-[#2952E6] hover:text-white"
+                  className="border-[#031881] text-[#031881] hover:bg-[#031881] hover:text-white"
                 >
                   Browse All Products
                 </Button>
@@ -752,7 +752,7 @@ export default function HomePage() {
                     key={pageNum}
                     variant="outline"
                     size="icon"
-                    className={`rounded-full ${teaPage === pageNum ? "bg-[#2952E6] text-white" : ""
+                    className={`rounded-full ${teaPage === pageNum ? "bg-[#031881] text-white" : ""
                       }`}
                     onClick={() => setTeaPage(pageNum)}
                   >
@@ -818,7 +818,7 @@ export default function HomePage() {
               <Link href="/wholesale-info">
                 <Button
                   size="lg"
-                  className="bg-[#2952E6] hover:bg-[#1e3fb3] text-white px-8 py-6 text-lg rounded-lg"
+                  className="bg-[#031881] hover:bg-[#021466] text-white px-8 py-6 text-lg rounded-lg"
                 >
                   Partner with Us!
                 </Button>
@@ -898,7 +898,7 @@ export default function HomePage() {
 
             <Dialog open={isReviewDialogOpen} onOpenChange={setIsReviewDialogOpen}>
               <DialogTrigger asChild>
-                <Button className="bg-[#2952E6] hover:bg-[#1e3fb3] text-white">
+                <Button className="bg-[#031881] hover:bg-[#021466] text-white">
                   <Plus className="w-4 h-4 mr-2" />
                   Write a Review
                 </Button>
@@ -967,7 +967,7 @@ export default function HomePage() {
                     />
                   </div>
                   <DialogFooter>
-                    <Button type="submit" disabled={isSubmittingReview} className="bg-[#2952E6] hover:bg-[#1e3fb3]">
+                    <Button type="submit" disabled={isSubmittingReview} className="bg-[#031881] hover:bg-[#021466]">
                       {isSubmittingReview ? "Submitting..." : "Submit Review"}
                     </Button>
                   </DialogFooter>
@@ -1076,7 +1076,7 @@ export default function HomePage() {
                   key={pageNum}
                   variant="outline"
                   size="icon"
-                  className={`rounded-full ${brewingPage === pageNum ? "bg-[#2952E6] text-white" : ""
+                  className={`rounded-full ${brewingPage === pageNum ? "bg-[#031881] text-white" : ""
                     }`}
                   onClick={() => setBrewingPage(pageNum)}
                 >

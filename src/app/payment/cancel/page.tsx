@@ -33,7 +33,7 @@ function PaymentCancelContent() {
             {orderId && (
               <Button 
                 onClick={() => router.push(`/payment?order_id=${orderId}`)}
-                className="bg-[#2952E6] hover:bg-[#1e3fb3]"
+                className="bg-[#031881] hover:bg-[#021466]"
               >
                 Try Again
               </Button>

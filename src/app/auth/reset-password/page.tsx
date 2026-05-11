@@ -88,7 +88,7 @@ function ResetPasswordPageContent() {
     return (
       <div className="min-h-screen flex items-center justify-center bg-white">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#2952E6] mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#031881] mx-auto mb-4"></div>
           <p className="text-gray-600">Verifying reset token...</p>
         </div>
       </div>
@@ -105,7 +105,7 @@ function ResetPasswordPageContent() {
               This password reset link is invalid or has expired. Please request a new one.
             </p>
             <Link href="/auth/forgot-password">
-              <Button className="bg-[#2952E6] hover:bg-[#1e3fb3] text-white">
+              <Button className="bg-[#031881] hover:bg-[#021466] text-white">
                 Request New Reset Link
               </Button>
             </Link>
@@ -173,7 +173,7 @@ function ResetPasswordPageContent() {
 
             <Button 
               type="submit" 
-              className="w-full py-6 bg-[#2952E6] hover:bg-[#1e3fb3] text-white font-semibold rounded-lg transition-colors"
+              className="w-full py-6 bg-[#031881] hover:bg-[#021466] text-white font-semibold rounded-lg transition-colors"
               disabled={loading}
             >
               {loading ? "Resetting..." : "Reset Password"}
@@ -182,7 +182,7 @@ function ResetPasswordPageContent() {
 
           <p className="text-center text-gray-600 mt-8">
             Remember your password?{" "}
-            <Link href="/auth/login" className="text-[#2952E6] font-semibold hover:underline">
+            <Link href="/auth/login" className="text-[#031881] font-semibold hover:underline">
               Login
             </Link>
           </p>

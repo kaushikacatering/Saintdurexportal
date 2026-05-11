@@ -146,8 +146,8 @@ export default function BlogsPage() {
                   variant={selectedFilters.includes(category) ? "default" : "outline"}
                   className={`px-4 py-2 cursor-pointer text-sm ${
                     selectedFilters.includes(category)
-                      ? "bg-[#2952E6] hover:bg-[#1e3fb3] text-white"
-                      : "bg-[#E3F2FD] border-[#2952E6] text-[#2952E6] hover:bg-[#BBDEFB]"
+                      ? "bg-[#031881] hover:bg-[#021466] text-white"
+                      : "bg-[#E3F2FD] border-[#031881] text-[#031881] hover:bg-[#BBDEFB]"
                   }`}
                   onClick={() => toggleFilter(category)}
                 >
@@ -204,7 +204,7 @@ export default function BlogsPage() {
                     )}
                   </div>
                   <Link href={`/blogs/${featuredBlog.slug}`}>
-                    <Button variant="link" className="text-[#2952E6] p-0 text-base font-medium">
+                    <Button variant="link" className="text-[#031881] p-0 text-base font-medium">
                       Read more →
                     </Button>
                   </Link>
@@ -273,7 +273,7 @@ export default function BlogsPage() {
                         {blog.excerpt || "Read more..."}
                       </p>
                       <Link href={`/blogs/${blog.slug}`}>
-                        <Button variant="link" className="text-[#2952E6] p-0">
+                        <Button variant="link" className="text-[#031881] p-0">
                           Read more →
                         </Button>
                       </Link>
@@ -304,7 +304,7 @@ export default function BlogsPage() {
                   key={page}
                   variant="outline"
                   size="icon"
-                  className={`rounded-full ${currentPage === page ? "bg-[#2952E6] text-white" : ""}`}
+                  className={`rounded-full ${currentPage === page ? "bg-[#031881] text-white" : ""}`}
                   onClick={() => {
                     setCurrentPage(page)
                     window.scrollTo({ top: 0, behavior: 'smooth' })

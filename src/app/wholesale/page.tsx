@@ -99,22 +99,22 @@
 
 //   const partnerTypes = [
 //     {
-//       icon: <Store className="w-12 h-12 text-[#2952E6]" />,
+//       icon: <Store className="w-12 h-12 text-[#031881]" />,
 //       title: "Independent Cafes",
 //       description: "Focused on quality and loyal customers."
 //     },
 //     {
-//       icon: <Building2 className="w-12 h-12 text-[#2952E6]" />,
+//       icon: <Building2 className="w-12 h-12 text-[#031881]" />,
 //       title: "Retailers",
 //       description: "Looking to stock premium, ethically sourced blends."
 //     },
 //     {
-//       icon: <Package className="w-12 h-12 text-[#2952E6]" />,
+//       icon: <Package className="w-12 h-12 text-[#031881]" />,
 //       title: "Wholesalers",
 //       description: "Who value reliability, speed, and standout product."
 //     },
 //     {
-//       icon: <Building className="w-12 h-12 text-[#2952E6]" />,
+//       icon: <Building className="w-12 h-12 text-[#031881]" />,
 //       title: "Hospitality & Offices",
 //       description: "Elevate guest & team experiences with premium coffee."
 //     }
@@ -139,7 +139,7 @@
 //             Join cafés, retailers & wholesalers serving premium coffee.
 //           </h1>
 //           <Link href="/auth/register?type=wholesale">
-//             <Button size="lg" className="bg-[#2952E6] hover:bg-[#1e3fb3] text-white px-12 py-6 text-lg mt-6">
+//             <Button size="lg" className="bg-[#031881] hover:bg-[#021466] text-white px-12 py-6 text-lg mt-6">
 //               Register Now
 //             </Button>
 //           </Link>
@@ -160,7 +160,7 @@
 //               </p>
 //             </div>
 //             <Link href="/auth/register?type=wholesale">
-//               <Button className="bg-[#2952E6] hover:bg-[#1e3fb3] text-white px-8">
+//               <Button className="bg-[#031881] hover:bg-[#021466] text-white px-8">
 //                 Register
 //               </Button>
 //             </Link>
@@ -197,7 +197,7 @@
 //             Join our family of cafés, restaurants, and creators who care about quality and connection. From freshly roasted beans to barista training and co-branded experiences, we've got your back — one cup at a time.
 //           </p>
 //           <Link href="/auth/register?type=wholesale">
-//             <Button size="lg" className="bg-[#2952E6] hover:bg-[#1e3fb3] text-white px-10">
+//             <Button size="lg" className="bg-[#031881] hover:bg-[#021466] text-white px-10">
 //               Register Now!
 //             </Button>
 //           </Link>
@@ -397,7 +397,7 @@
 
 //             <Button 
 //               type="submit" 
-//               className="w-full py-6 bg-[#2952E6] hover:bg-[#1e3fb3] text-white font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+//               className="w-full py-6 bg-[#031881] hover:bg-[#021466] text-white font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
 //               disabled={loading || submitted}
 //             >
 //               {loading ? "Submitting..." : (submitted ? "Submitted!" : "Submit")}
@@ -455,7 +455,7 @@ export default function WholesalePortalPage() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#2952E6] mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#031881] mx-auto mb-4"></div>
           <p>Loading wholesale portal...</p>
         </div>
       </div>

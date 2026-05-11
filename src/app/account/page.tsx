@@ -1074,7 +1074,7 @@ function AccountContent() {
           </DialogHeader>
           <DialogFooter>
             <Button variant="outline" onClick={() => setSubscriptionToRenew(null)}>Cancel</Button>
-            <Button onClick={performSubscriptionRenewal} className="bg-[#2952E6]">Proceed</Button>
+            <Button onClick={performSubscriptionRenewal} className="bg-[#031881]">Proceed</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
@@ -1103,7 +1103,7 @@ function AccountContent() {
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
-            <Button onClick={() => setShowCancelSuccess(false)} className="bg-[#2952E6]">OK</Button>
+            <Button onClick={() => setShowCancelSuccess(false)} className="bg-[#031881]">OK</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>

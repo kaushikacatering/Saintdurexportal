@@ -766,13 +766,13 @@ export default function ProductDetailPage({
           <nav className="flex items-center gap-2 text-sm flex-wrap">
             <Link
               href="/"
-              className="text-gray-600 hover:text-[#2952E6] flex items-center gap-1"
+              className="text-gray-600 hover:text-[#031881] flex items-center gap-1"
             >
               <Home className="w-4 h-4" />
               Home
             </Link>
             <ChevronRightIcon className="w-4 h-4 text-gray-400" />
-            <Link href="/shop" className="text-gray-600 hover:text-[#2952E6]">
+            <Link href="/shop" className="text-gray-600 hover:text-[#031881]">
               Product Catalogue
             </Link>
             {mainCategory && (
@@ -780,7 +780,7 @@ export default function ProductDetailPage({
                 <ChevronRightIcon className="w-4 h-4 text-gray-400" />
                 <Link
                   href={`/shop?category=${mainCategory.category_id}`}
-                  className="text-gray-600 hover:text-[#2952E6]"
+                  className="text-gray-600 hover:text-[#031881]"
                 >
                   {mainCategory.category_name}
                 </Link>
@@ -791,7 +791,7 @@ export default function ProductDetailPage({
                 <ChevronRightIcon className="w-4 h-4 text-gray-400" />
                 <Link
                   href={`/shop?category=${subCategory.category_id}`}
-                  className="text-gray-600 hover:text-[#2952E6]"
+                  className="text-gray-600 hover:text-[#031881]"
                 >
                   {subCategory.category_name}
                 </Link>
@@ -884,7 +884,7 @@ export default function ProductDetailPage({
                           key={index}
                           onClick={() => setSelectedImageIndex(index)}
                           className={`relative flex-shrink-0 w-20 h-20 rounded-lg overflow-hidden border-2 transition-all ${selectedImageIndex === index
-                            ? "border-[#2952E6] ring-2 ring-[#2952E6] ring-offset-2"
+                            ? "border-[#031881] ring-2 ring-[#031881] ring-offset-2"
                             : "border-gray-200 hover:border-gray-300"
                             }`}
                           aria-label={`View image ${index + 1}`}
@@ -1031,7 +1031,7 @@ export default function ProductDetailPage({
                         <span className="text-xl text-gray-500 line-through">
                           ${originalTotal.toFixed(2)}
                         </span>
-                        <div className="text-2xl font-bold text-[#2952E6]">
+                        <div className="text-2xl font-bold text-[#031881]">
                           ${discountedTotal.toFixed(2)}
                         </div>
                         {product.discount_percentage && (
@@ -1044,7 +1044,7 @@ export default function ProductDetailPage({
                   }
 
                   return (
-                    <div className="text-2xl font-bold text-[#2952E6]">
+                    <div className="text-2xl font-bold text-[#031881]">
                       ${totalPrice.toFixed(2)}
                     </div>
                   );
@@ -1129,7 +1129,7 @@ export default function ProductDetailPage({
                                       value={value.option_value_id}
                                       checked={isSelected}
                                       onChange={() => handleOptionChange(value.option_value_id)}
-                                      className="h-4 w-4 border-gray-300 text-[#2952E6] focus:ring-[#2952E6]"
+                                      className="h-4 w-4 border-gray-300 text-[#031881] focus:ring-[#031881]"
                                     />
                                     <label htmlFor={`option-value-${value.option_value_id}`} className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer">
                                       {value.option_value} {displayPrice}
@@ -1163,7 +1163,7 @@ export default function ProductDetailPage({
                                         }
                                         handleOptionChange(newArr);
                                       }}
-                                      className="h-4 w-4 rounded border-gray-300 text-[#2952E6] focus:ring-[#2952E6]"
+                                      className="h-4 w-4 rounded border-gray-300 text-[#031881] focus:ring-[#031881]"
                                     />
                                     <label htmlFor={`option-value-${value.option_value_id}`} className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 cursor-pointer">
                                       {value.option_value} {displayPrice}
@@ -1180,7 +1180,7 @@ export default function ProductDetailPage({
                               placeholder={option.option_name}
                               value={(selectedOptions[option.option_id] as string) || ""}
                               onChange={(e) => handleOptionChange(e.target.value)}
-                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2952E6] focus:border-[#2952E6]"
+                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#031881] focus:border-[#031881]"
                             />
                           );
                         } else {
@@ -1189,7 +1189,7 @@ export default function ProductDetailPage({
                             <select
                               value={(selectedOptions[option.option_id] as number) || ""}
                               onChange={(e) => handleOptionChange(Number.parseInt(e.target.value))}
-                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#2952E6] focus:border-[#2952E6]"
+                              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#031881] focus:border-[#031881]"
                               required={option.required}
                             >
                               <option value="">Select {option.option_name}</option>
@@ -1314,7 +1314,7 @@ export default function ProductDetailPage({
                       type="radio"
                       checked={purchaseType === "onetime"}
                       onChange={() => setPurchaseType("onetime")}
-                      className="w-4 h-4 text-[#2952E6]"
+                      className="w-4 h-4 text-[#031881]"
                     />
                     <span className="text-black">One-time Purchase</span>
                   </label>
@@ -1327,7 +1327,7 @@ export default function ProductDetailPage({
                         type="radio"
                         checked={purchaseType === "subscription"}
                         onChange={() => setPurchaseType("subscription")}
-                        className="w-4 h-4 text-[#2952E6]"
+                        className="w-4 h-4 text-[#031881]"
                       />
                       <span className="font-medium text-black">
                         Subscribe & Deliver every
@@ -1343,7 +1343,7 @@ export default function ProductDetailPage({
                             <select
                               value={subscriptionFrequency}
                               onChange={(e) => setSubscriptionFrequency(e.target.value)}
-                              className="w-full pl-4 pr-10 py-2.5 bg-white border border-gray-200 rounded-lg text-gray-900 text-sm focus:ring-2 focus:ring-[#2952E6] focus:border-transparent transition-all appearance-none cursor-pointer"
+                              className="w-full pl-4 pr-10 py-2.5 bg-white border border-gray-200 rounded-lg text-gray-900 text-sm focus:ring-2 focus:ring-[#031881] focus:border-transparent transition-all appearance-none cursor-pointer"
                             >
                               <option value="2 Weeks">Every 2 Weeks</option>
                               <option value="4 Weeks">Every 4 Weeks</option>
@@ -1367,7 +1367,7 @@ export default function ProductDetailPage({
                               min={new Date().toISOString().split('T')[0]}
                               value={deliveryStartDate}
                               onChange={(e) => setDeliveryStartDate(e.target.value)}
-                              className="w-full pl-4 pr-4 py-2.5 bg-white border border-gray-200 rounded-lg text-gray-900 text-sm focus:ring-2 focus:ring-[#2952E6] focus:border-transparent transition-all placeholder:text-gray-400"
+                              className="w-full pl-4 pr-4 py-2.5 bg-white border border-gray-200 rounded-lg text-gray-900 text-sm focus:ring-2 focus:ring-[#031881] focus:border-transparent transition-all placeholder:text-gray-400"
                               placeholder="Select start date"
                             />
                           </div>
@@ -1388,7 +1388,7 @@ export default function ProductDetailPage({
                   </p>
                   <a
                     href="/pending"
-                    className="text-sm font-medium text-[#2952E6] underline underline-offset-2"
+                    className="text-sm font-medium text-[#031881] underline underline-offset-2"
                   >
                     View approval status →
                   </a>
@@ -1396,7 +1396,7 @@ export default function ProductDetailPage({
               ) : (
                 <Button
                   size="lg"
-                  className="w-full py-6 bg-[#2952E6] hover:bg-[#1e3fb3] text-white font-semibold text-lg"
+                  className="w-full py-6 bg-[#031881] hover:bg-[#021466] text-white font-semibold text-lg"
                   onClick={handleAddToCart}
                 >
                   Add to Cart
@@ -1410,14 +1410,14 @@ export default function ProductDetailPage({
             <TabsList className="w-full justify-start border-b rounded-none h-auto p-0 bg-transparent">
               <TabsTrigger
                 value="description"
-                className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#2952E6] data-[state=active]:text-[#2952E6] text-lg"
+                className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#031881] data-[state=active]:text-[#031881] text-lg"
               >
                 Description
               </TabsTrigger>
               {product.show_specifications && (
                 <TabsTrigger
                   value="specifications"
-                  className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#2952E6] data-[state=active]:text-[#2952E6] text-lg"
+                  className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#031881] data-[state=active]:text-[#031881] text-lg"
                 >
                   Specifications
                 </TabsTrigger>
@@ -1425,7 +1425,7 @@ export default function ProductDetailPage({
               {product.show_other_info && (
                 <TabsTrigger
                   value="other"
-                  className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#2952E6] data-[state=active]:text-[#2952E6]  text-lg"
+                  className="rounded-none border-b-2 border-transparent data-[state=active]:border-[#031881] data-[state=active]:text-[#031881]  text-lg"
                 >
                   Other Info
                 </TabsTrigger>
@@ -1607,7 +1607,7 @@ export default function ProductDetailPage({
 
                 <Button
                   onClick={handleSubmitReview}
-                  className="bg-[#2952E6] hover:bg-[#1e3fb3]"
+                  className="bg-[#031881] hover:bg-[#021466]"
                   disabled={
                     submittingReview || !rating || reviewText.trim().length < 10
                   }
@@ -1625,7 +1625,7 @@ export default function ProductDetailPage({
                 You may also Like
               </h2>
               <Link href="/shop" className="w-full md:w-auto">
-                <Button className="bg-[#2952E6] hover:bg-[#1e3fb3] w-full md:w-auto">
+                <Button className="bg-[#031881] hover:bg-[#021466] w-full md:w-auto">
                   View All
                 </Button>
               </Link>

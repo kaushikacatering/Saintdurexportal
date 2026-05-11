@@ -405,7 +405,7 @@ function RegisterPageContent() {
                     localStorage.setItem("last_wholesale_type", "premium");
                   }}
                   className={`flex-1 py-2 px-4 font-medium transition-colors rounded-lg ${wholesaleType === "premium"
-                    ? "bg-[#2952E6] text-white"
+                    ? "bg-[#031881] text-white"
                     : "bg-[#0F2C5C] text-white/70 hover:bg-[#1e3a6b]"
                     }`}
                 >
@@ -418,7 +418,7 @@ function RegisterPageContent() {
                     localStorage.setItem("last_wholesale_type", "essential");
                   }}
                   className={`flex-1 py-2 px-4 font-medium transition-colors rounded-lg ${wholesaleType === "essential"
-                    ? "bg-[#2952E6] text-white"
+                    ? "bg-[#031881] text-white"
                     : "bg-[#0F2C5C] text-white/70 hover:bg-[#1e3a6b]"
                     }`}
                 >
@@ -886,7 +886,7 @@ function RegisterPageContent() {
 
             <Button
               type="submit"
-              className="w-full py-6 bg-[#2952E6] hover:bg-[#1e3fb3] text-white font-semibold rounded-lg transition-colors"
+              className="w-full py-6 bg-[#031881] hover:bg-[#021466] text-white font-semibold rounded-lg transition-colors"
               disabled={loading}
             >
               {loading ? "Creating account..." : "Sign Up"}
@@ -899,7 +899,7 @@ function RegisterPageContent() {
             Already have an account?{" "}
             <Link
               href="/auth/login"
-              className="font-semibold hover:underline text-[#2952E6]"
+              className="font-semibold hover:underline text-[#031881]"
             >
               login
             </Link>

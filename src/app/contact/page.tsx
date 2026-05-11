@@ -232,7 +232,7 @@ export default function ContactPage() {
 
               <div className="space-y-6">
                 <div className="flex items-start gap-3">
-                  <MapPin className="w-5 h-5 text-[#2952E6] mt-1 flex-shrink-0" />
+                  <MapPin className="w-5 h-5 text-[#031881] mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-gray-900 font-medium mb-1">Address</p>
                     <p className="text-gray-700">St Dreux Coffee Roasters</p>
@@ -241,7 +241,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Mail className="w-5 h-5 text-[#2952E6] mt-1 flex-shrink-0" />
+                  <Mail className="w-5 h-5 text-[#031881] mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-gray-900 font-medium">Email</p>
                     <p className="text-gray-700">contact@stdreux.com.au</p>
@@ -249,7 +249,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start gap-3">
-                  <Phone className="w-5 h-5 text-[#2952E6] mt-1 flex-shrink-0" />
+                  <Phone className="w-5 h-5 text-[#031881] mt-1 flex-shrink-0" />
                   <div>
                     <p className="text-gray-900 font-medium">Phone</p>
                     <p className="text-gray-700">(02) 4611 7229</p>
@@ -345,7 +345,7 @@ export default function ContactPage() {
 
                     <Button 
                       type="submit" 
-                      className="w-full py-6 bg-[#2952E6] hover:bg-[#1e3fb3] text-white font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
+                      className="w-full py-6 bg-[#031881] hover:bg-[#021466] text-white font-semibold text-lg disabled:opacity-50 disabled:cursor-not-allowed"
                       disabled={loading}
                     >
                       {loading ? "Sending..." : "Submit"}

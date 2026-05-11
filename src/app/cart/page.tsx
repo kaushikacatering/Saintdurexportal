@@ -204,7 +204,7 @@ export default function CartPage() {
 
                         {/* Display Subscription Details */}
                         {item.subscription && (
-                          <div className="mt-2 text-sm text-[#2952E6] font-medium bg-blue-50 p-2 rounded inline-block">
+                          <div className="mt-2 text-sm text-[#031881] font-medium bg-blue-50 p-2 rounded inline-block">
                             <p>Subscription: {item.subscription.frequency}</p>
                             {item.subscription.startDate && (
                               <p>Start Date: {new Date(item.subscription.startDate).toLocaleDateString('en-GB')}</p>
@@ -360,7 +360,7 @@ export default function CartPage() {
                   </p>
                   <a
                     href="/pending"
-                    className="text-sm font-medium text-[#2952E6] underline underline-offset-2"
+                    className="text-sm font-medium text-[#031881] underline underline-offset-2"
                   >
                     View approval status →
                   </a>

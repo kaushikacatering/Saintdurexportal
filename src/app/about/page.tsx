@@ -65,7 +65,7 @@ export default function AboutPage() {
               Crafted with passion, enjoyed in sip. Taste the difference.
             </p>
             <Link href="/contact">
-              <Button size="lg" className="bg-[#2952E6] hover:bg-[#1e3fb3] text-white px-8 py-6 text-lg">
+              <Button size="lg" className="bg-[#031881] hover:bg-[#021466] text-white px-8 py-6 text-lg">
                 Get in Touch
               </Button>
             </Link>
@@ -88,7 +88,7 @@ export default function AboutPage() {
       </section>
 
       {/* Our Roasting Process Section */}
-      <section className="py-20 bg-[#2952E6]">
+      <section className="py-20 bg-[#031881]">
         <div className="container mx-auto px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
             {/* Image */}
@@ -127,7 +127,7 @@ export default function AboutPage() {
                 <Button
                   size="icon"
                   variant="outline"
-                  className="rounded-full bg-white text-[#2952E6] hover:bg-white/90 border-0"
+                  className="rounded-full bg-white text-[#031881] hover:bg-white/90 border-0"
                   onClick={prevStep}
                 >
                   <ChevronLeft className="w-5 h-5" />
@@ -135,7 +135,7 @@ export default function AboutPage() {
                 <Button
                   size="icon"
                   variant="outline"
-                  className="rounded-full bg-white text-[#2952E6] hover:bg-white/90 border-0"
+                  className="rounded-full bg-white text-[#031881] hover:bg-white/90 border-0"
                   onClick={nextStep}
                 >
                   <ChevronRight className="w-5 h-5" />
@@ -157,7 +157,7 @@ export default function AboutPage() {
               We build lasting partnerships and a community that shares our love for great coffee. Inspired by St. Dreux, the patron saint of coffee-holics, we carry forward his spirit of devotion and purpose — one cup at a time.
             </p>
             <Link href="/wholesale-info">
-              <Button size="lg" className="bg-[#2952E6] hover:bg-[#1e3fb3] text-white px-8">
+              <Button size="lg" className="bg-[#031881] hover:bg-[#021466] text-white px-8">
                 Partner With Us
               </Button>
             </Link>

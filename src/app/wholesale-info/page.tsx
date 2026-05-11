@@ -37,7 +37,7 @@ export default function WholesaleInfoPage() {
                   Custom branding options
                 </li>
               </ul>
-              <Button asChild className="w-full bg-[#2952E6] hover:bg-[#1e3fb3]">
+              <Button asChild className="w-full bg-[#031881] hover:bg-[#021466]">
                 <Link href="/auth/register?type=wholesale&plan=premium">
                   Apply for Premium
                 </Link>
@@ -68,7 +68,7 @@ export default function WholesaleInfoPage() {
                   Email support
                 </li>
               </ul>
-              <Button asChild variant="outline" className="w-full bg-[#2952E6] text-white  hover:bg-[#1e3fb3] hover:text-white  ">
+              <Button asChild variant="outline" className="w-full bg-[#031881] text-white  hover:bg-[#021466] hover:text-white  ">
                 <Link href="/auth/register?type=wholesale&plan=essential">
                   Apply for Essential
                 </Link>

@@ -916,7 +916,7 @@ export function ShopPageContent() {
                     />
                     {searchLoading && search && (
                       <div className="absolute right-3 top-1/2 -translate-y-1/2">
-                        <div className="animate-spin rounded-full h-4 w-4 border-2 border-[#2952E6] border-t-transparent"></div>
+                        <div className="animate-spin rounded-full h-4 w-4 border-2 border-[#031881] border-t-transparent"></div>
                       </div>
                     )}
                   </div>
@@ -990,7 +990,7 @@ export function ShopPageContent() {
                         Reset
                       </Button>
                       <Button
-                        className="flex-1 bg-[#2952E6] hover:bg-[#1e3fb3]"
+                        className="flex-1 bg-[#031881] hover:bg-[#021466]"
                         onClick={handleApplyFilters}
                       >
                         Apply Filters
@@ -1237,7 +1237,7 @@ export function ShopPageContent() {
           </DialogHeader>
           <DialogFooter>
             <Button variant="outline" onClick={() => setSubscriptionToRenew(null)}>Cancel</Button>
-            <Button onClick={performSubscriptionRenewal} className="bg-[#2952E6]">Proceed</Button>
+            <Button onClick={performSubscriptionRenewal} className="bg-[#031881]">Proceed</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
@@ -1266,7 +1266,7 @@ export function ShopPageContent() {
             </DialogDescription>
           </DialogHeader>
           <DialogFooter>
-            <Button onClick={() => setShowCancelSuccess(false)} className="bg-[#2952E6]">OK</Button>
+            <Button onClick={() => setShowCancelSuccess(false)} className="bg-[#031881]">OK</Button>
           </DialogFooter>
         </DialogContent>
       </Dialog>
@@ -1457,7 +1457,7 @@ const ProductCard = ({
                           ${strikePrice.toFixed(2)}
                         </span>
                       )}
-                      <span className="text-xl font-bold text-[#2952E6]">
+                      <span className="text-xl font-bold text-[#031881]">
                         ${displayPrice.toFixed(2)}
                       </span>
                     </div>
@@ -1475,7 +1475,7 @@ const ProductCard = ({
                         ${strikePrice.toFixed(2)}
                       </span>
                     )}
-                    <span className="text-xl font-bold text-[#2952E6]">
+                    <span className="text-xl font-bold text-[#031881]">
                       ${displayPrice.toFixed(2)}
                     </span>
                     {isDiscount &&
@@ -1494,7 +1494,7 @@ const ProductCard = ({
             </p>
           </div>
           <div className="flex gap-2 mt-auto">
-            <Button asChild size="sm" variant="outline" className="w-full bg-[#2952E6] text-white hover:bg-white hover:border-[#2952E6]">
+            <Button asChild size="sm" variant="outline" className="w-full bg-[#031881] text-white hover:bg-white hover:border-[#031881]">
               <span>View Details</span>
             </Button>
           </div>
