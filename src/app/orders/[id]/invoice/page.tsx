@@ -159,7 +159,7 @@ export default function InvoicePage() {
                     </Link>
                     <Button
                         onClick={handlePrint}
-                        className="bg-[#3B5BD6] text-white hover:bg-[#2A4AC9] px-6 rounded-lg shadow-sm"
+                        className="bg-[#031881] text-white hover:bg-[#021466] px-6 rounded-lg shadow-sm"
                     >
                         <Printer className="h-4 w-4 mr-2" />
                         Print Invoice
@@ -169,7 +169,7 @@ export default function InvoicePage() {
                 {/* Invoice Card */}
                 <div className="bg-white shadow-[0_0_40px_rgba(0,0,0,0.03)] border border-gray-100 rounded-xl overflow-hidden print:shadow-none print:border-none print:rounded-none">
                     {/* Top Branding Bar */}
-                    <div className="h-1.5 bg-[#3B5BD6]" />
+                    <div className="h-1.5 bg-[#031881]" />
 
                     <div className="p-8 sm:p-12">
                         {/* Header: Logo & Title */}
@@ -244,7 +244,7 @@ export default function InvoicePage() {
                                     {order.items?.map((item, index) => (
                                         <tr key={index} className="group">
                                             <td className="py-6 px-4">
-                                                <p className="font-bold text-gray-900 group-hover:text-[#3B5BD6] transition-colors">{item.product_name}</p>
+                                                <p className="font-bold text-gray-900 group-hover:text-[#031881] transition-colors">{item.product_name}</p>
                                             </td>
                                             <td className="py-6 px-4 text-center text-gray-600">{item.quantity}</td>
                                             <td className="py-6 px-4 text-right text-gray-600">${parseFloat(item.price).toFixed(2)}</td>
@@ -279,7 +279,7 @@ export default function InvoicePage() {
                                         </div>
 
                                         {wholesaleDiscount > 0 && (
-                                            <div className="flex justify-between text-sm text-[#3B5BD6]">
+                                            <div className="flex justify-between text-sm text-[#031881]">
                                                 <span>Wholesale Discount</span>
                                                 <span className="font-semibold">-${wholesaleDiscount.toFixed(2)}</span>
                                             </div>
@@ -333,7 +333,7 @@ export default function InvoicePage() {
 
                                         <div className="flex justify-between items-center pt-6 mt-4 border-t-2 border-gray-900">
                                             <span className="text-lg font-black text-gray-900 uppercase tracking-tighter">Total AUD</span>
-                                            <span className="text-4xl font-black text-[#3B5BD6]">
+                                            <span className="text-4xl font-black text-[#031881]">
                                                 ${totalAmount.toFixed(2)}
                                             </span>
                                         </div>

@@ -367,7 +367,7 @@ function RegisterPageContent() {
                 localStorage.removeItem("last_wholesale_type");
               }}
               className={`flex-1 py-3 px-6 font-medium transition-colors rounded-t-lg ${userType === "customer"
-                ? "bg-[#3b5bd6] text-white"
+                ? "bg-[#031881] text-white"
                 : "bg-[#F5F5F0] text-gray-600 hover:bg-gray-50"
                 }`}
             >
@@ -381,7 +381,7 @@ function RegisterPageContent() {
                 localStorage.setItem("last_wholesale_type", wholesaleType);
               }}
               className={`flex-1 py-3 px-6 font-medium transition-colors rounded-t-lg ${userType === "wholesale"
-                ? "bg-[#3b5bd6] text-white"
+                ? "bg-[#031881] text-white"
                 : "bg-[#F5F5F0] text-gray-600 hover:bg-gray-50"
                 }`}
             >

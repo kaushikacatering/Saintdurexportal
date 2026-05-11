@@ -2014,8 +2014,8 @@ export default function CheckoutPage() {
           onInteractOutside={(e) => e.preventDefault()}
         >
           <div className="flex flex-col items-center justify-center space-y-4">
-            <div className="rounded-full border-2 border-[#3b5bd6] p-3">
-              <Check className="h-8 w-8 text-[#3b5bd6]" />
+            <div className="rounded-full border-2 border-[#031881] p-3">
+              <Check className="h-8 w-8 text-[#031881]" />
             </div>
 
             <div className="space-y-2">
@@ -2031,7 +2031,7 @@ export default function CheckoutPage() {
             </div>
 
             <Button
-              className="w-full bg-[#3b5bd6] hover:bg-[#3b5bd6] text-white mt-6 py-6 uppercase tracking-wider font-medium"
+              className="w-full bg-[#031881] hover:bg-[#031881] text-white mt-6 py-6 uppercase tracking-wider font-medium"
               onClick={() => router.push('/account?tab=orders')}
             >
               Your Order History

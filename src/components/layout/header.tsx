@@ -26,7 +26,7 @@
 //   }, [])
 
 //   return (
-//     <header className="bg-[#3B5BD6] sticky top-0 z-50 shadow-md">
+//     <header className="bg-[#031881] sticky top-0 z-50 shadow-md">
 //       <div className="container mx-auto px-4 sm:px-6">
 //         <div className="flex items-center justify-between h-16 sm:h-20 min-h-[64px] sm:min-h-[80px]">
 //           {/* Logo */}
@@ -340,7 +340,7 @@ export function Header() {
   };
 
   return (
-    <header className="bg-[#3B5BD6] sticky top-0 z-50 shadow-md">
+    <header className="bg-[#031881] sticky top-0 z-50 shadow-md">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16 sm:h-20 min-h-[64px] sm:min-h-[80px]">
           {/* Logo */}
