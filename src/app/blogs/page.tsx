@@ -24,6 +24,19 @@ interface Blog {
   published_date: string
 }
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL || "https://api.stdreux.com.au"
+
+// Resolve image URL to always use the correct API host
+function resolveImageUrl(url: string | null | undefined): string {
+  if (!url) return ""
+  // Extract the /uploads/... path and prepend correct API URL
+  const uploadsMatch = url.match(/\/uploads\/.+/)
+  if (uploadsMatch) {
+    return `${API_URL.replace(/\/$/, '')}${uploadsMatch[0]}`
+  }
+  return url
+}
+
 export default function BlogsPage() {
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedFilters, setSelectedFilters] = useState<string[]>([])
@@ -167,7 +180,7 @@ export default function BlogsPage() {
                 <div className="relative aspect-[4/3] rounded-lg overflow-hidden">
                   {featuredBlog.featured_image_url ? (
                     <Image
-                      src={featuredBlog.featured_image_url}
+                      src={resolveImageUrl(featuredBlog.featured_image_url)}
                       alt={featuredBlog.title}
                       fill
                       className="object-cover"
@@ -231,7 +244,7 @@ export default function BlogsPage() {
                     <div className="relative aspect-[4/3]">
                       {blog.featured_image_url ? (
                         <Image
-                          src={blog.featured_image_url}
+                          src={resolveImageUrl(blog.featured_image_url)}
                           alt={blog.title}
                           fill
                           className="object-cover"
